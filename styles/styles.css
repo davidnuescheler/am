@@ -262,10 +262,10 @@ picture img {
   margin-top: 9em;
 }
 
-.homepage p {
+.homepage main p {
   color: #777;
 }
 
-.homepage h1 + p img {
+.homepage main h1 + p img {
   margin-top: 2em;
 }
