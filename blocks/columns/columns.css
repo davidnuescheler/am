@@ -11,6 +11,22 @@
   order: 1;
 }
 
+.columns > div > div[data-align='left'] {
+  text-align: left;
+}
+
+.columns > div > div[data-align='center'] {
+  text-align: center;
+}
+
+.columns > div > div[data-align='right'] {
+  text-align: right;
+}
+
+.columns > div > div[data-align='justify'] {
+  text-align: justify;
+}
+
 .columns > div > .columns-img-col {
   order: 0;
 }
@@ -29,5 +45,17 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+
+  .columns > div > div[data-valign='top'] {
+    align-self: start;
+  }
+
+  .columns > div > div[data-valign='middle'] {
+    align-self: center;
+  }
+
+  .columns > div > div[data-valign='bottom'] {
+    align-self: end;
   }
 }
