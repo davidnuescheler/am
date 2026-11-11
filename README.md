@@ -42,6 +42,24 @@ sheet, saved passwords, and page content are accessible to browser users.
 Do not use sensitive or reused passwords; protecting confidential content
 requires server-side authentication.
 
+## Publishing from the footer
+
+The footer's **Publish** button updates the current page's preview, then publishes
+it using sequential POST requests to `admin.hlx.page`. Publishing stops if preview
+fails, and the footer displays progress, success, or an error.
+On `/catalog`, it also previews and publishes `/passwords.json` after publishing
+the page. Success is reported only when both resources have been published.
+The page reloads after all publishing operations succeed; failures do not reload it.
+
+Requests use the `davidnuescheler/am` site and the branch from its AEM/Helix hostname,
+or `main` on custom domains and localhost. Resource paths exclude query parameters
+and fragments.
+
+The browser must have a valid AEM admin session with preview and publish permissions
+when the site requires authentication. Cross-origin requests include credentials,
+so browser cookie restrictions and the Admin API's CORS policy must permit them.
+The catalog access code does not grant publishing permissions.
+
 ## Local development
 
 1. Create a new repository based on the `aem-block-collection` template and add a mountpoint in the `fstab.yaml`
