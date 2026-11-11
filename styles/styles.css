@@ -74,6 +74,29 @@ body.appear {
   display: block;
 }
 
+body.catalog-login-open {
+  overflow: hidden;
+}
+
+.catalog-login {
+  box-sizing: border-box;
+  width: min(420px, calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  padding: 24px;
+  border: 1px solid var(--dark-color);
+  border-radius: 8px;
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+.catalog-login::backdrop {
+  background: rgb(19 19 19 / 75%);
+}
+
+.catalog-login-status {
+  font-size: var(--body-font-size-s);
+}
+
 header {
   height: var(--header-height);
 }
@@ -268,4 +291,32 @@ picture img {
 
 .homepage main h1 + p img {
   margin-top: 2em;
+}
+
+.catalog-login h2 {
+  margin-top: 0;
+}
+
+.catalog-login label {
+  display: block;
+  margin-top: 16px;
+}
+
+.catalog-login input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--dark-color);
+  border-radius: 4px;
+}
+
+.catalog-login button[type="submit"] {
+  border-radius: 0;
+  background-color: #000;
+  color: #fff;
+}
+
+.catalog-login button[type="submit"]:disabled {
+  background-color: var(--light-color);
+  color: var(--dark-color);
 }

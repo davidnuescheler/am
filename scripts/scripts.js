@@ -84,6 +84,13 @@ async function loadEager(doc) {
   }
   const main = doc.querySelector('main');
   if (main) {
+    if (window.location.pathname === '/catalog') {
+      main.hidden = true;
+      doc.body.classList.add('appear');
+      const { default: requireCatalogLogin } = await import('./catalog-login.js');
+      await requireCatalogLogin();
+      main.hidden = false;
+    }
     decorateMain(main);
     doc.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
